@@ -1,16 +1,38 @@
 /* Base Styles */
 body {
+  margin: 0;
   font-family: Poppins, sans-serif;
 }
 
-/* .container {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 24px;
-  } */
+.nav {
+  padding-inline: 1.2rem;
+  color: white;
+  background-color: #010114;
+  min-height: 93px;
+}
+
+.cta {
+  /* font-size: 16px;
+  line-height: 24px;   identical to box height, or 150% */
+  text-align: center;
+  font-weight: 700;
+  padding: 15px 20px;
+  border: 1px solid white;
+}
+
+.logo {
+  width: 100px;
+  height: 42px;
+}
+
+.container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start;
+  align-items: flex-start; */
+  gap: 24px;
+}
 
 .flex {
   display: flex;
@@ -34,6 +56,12 @@ body {
   font-size: 20px;
   line-height: 30px;
   word-wrap: break-word;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
 }
 
 .arrow-icon {
