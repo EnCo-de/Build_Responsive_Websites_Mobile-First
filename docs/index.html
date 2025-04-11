@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store cart</title>
+  <link rel="icon" href="img/logo.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" type="module"></script>
+</head>
+
+<body>
+  <header class="hero">
+    <!-- navbar  -->
+    <nav class="navbar flex space-between align-center">
+      <a href="/index.html"><img class="navbar-brand" src="img/logo.svg" alt="navbar-brand" /></a>
+      <ul class="navbar-nav flex align-center hide-s navbar-collapse" id="navLinks">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#store">Store</a>
+        </li>
+      </ul>
+
+      <div class="nav-info flex align-center hide-s">
+        <img src="icons/phone-flip.svg">
+        <tel class="mb-0">+ 123 456 789</tel>
+      </div>
+      <div id="cart-info" class="btn btn-rose nav-info flex align-center cart-info">
+        <img src="icons/cart-shopping.svg" alt="cart-shopping">
+        <p><span id="itemCount">0</span> items - $<span class="item-total">0.00</span></p>
+      </div>
+
+      <input type="image" id="navbar-toggle" class="navbar-toggle hide-l" src="icons/bars.svg" alt=""></button>
+
+
+      <div id="cart" class="cart">
+        <div class="cart-items-container btt-2">
+          <template id="cart-item-template">
+            <!-- cart item -->
+            <div data-key data-price="" class="cart-item flex align-center space-between btt-2">
+              <img src="" class="cart-item-img" alt="" />
+              <div class="item-text">
+                <p class="cart-item-name">
+                  cart item
+                </p>
+                <div class="cart-item-text flex space-between">
+                  <p class="cart-item-price">1</p>
+                  <p class="cart-item-count">1</p>
+                </div>
+              </div>
+              <button class="cart-item-boost">boost</button>
+              <input type="image" id="cart-remove" class="navbar-toggle cart-item-remove" src="icons/trash.svg"
+                alt="cart-remove"></button>
+            </div>
+          </template>
+
+        </div>
+
+        <!-- cart total -->
+        <div class="cart-total-container flex btt-2">
+          <h3>Total</h3>
+          <h3>$ <strong id="cartTotal">0.00</strong></h3>
+        </div>
+        <!-- cart buttons -->
+        <div class="cart-buttons-container flex space-between">
+          <input type="button" id="clearCartBtn" class="btn cart-btn btn-black" value="Clear cart" />
+          <input type="button" id="checkoutBtn" class="btn cart-btn btn-rose" value="Checkout" />
+        </div>
+      </div>
+    </nav>
+    <!-- end of navbar -->
+
+    <!-- banner -->
+    <section class="banner flex justify-center align-center text-center inline-4">
+      <h1 class="h1 btt-2">Welcome To <strong class="rose">Grandma's</strong></h1>
+      <a href="#store" class="btn btn-black banner-link">EXPLORE</a>
+    </section>
+  </header>
+
+  <main>
+    <section class="about flex wrap space-between inline-4 block-3" id="about">
+      <div class="about-content">
+        <h2 class="h2 btt-2">About <strong class="rose">Us</strong></h2>
+        <p class="about-text btt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, nisi aperiam? Non in
+          labore
+          veniam, assumenda omnis est sed illo quisquam? Voluptate nesciunt in et quidem aperiam iusto repellendus
+          explicabo?</p>
+        <a href="#store" class="btn btn-black banner-link">EXPLORE</a>
+      </div>
+      <div>
+        <div class="about-container">
+          <img src="img/sweets-1.jpeg" alt="about" class="about-image">
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- store -->
+    <section class="store block-3" id="store">
+      <h2 class="h2 text-center btt-2">Our <strong class="rose">Store</strong></h2>
+      <form id="searchForm" class="btt-2">
+        <ul id="filterButtons" class="filter-buttons flex wrap justify-center btt-2">
+          <li>
+            <input type="button" id="all" value="all" class="hide filter-btn">
+            <label for="all" class="btn btn-black">All</label>
+          </li>
+          <li>
+            <input type="checkbox" name="variety" id="cakes" value="cakes" class="hide filter-btn">
+            <label for="cakes" class="btn btn-black">Cakes</label>
+          </li>
+          <li>
+            <input type="checkbox" name="variety" id="cupcakes" value="cupcakes" class="hide filter-btn">
+            <label for="cupcakes" class="btn btn-black">Cupcakes</label>
+          </li>
+          <li>
+            <input type="checkbox" name="variety" id="sweets" value="sweets" class="hide filter-btn">
+            <label for="sweets" class="btn btn-black">Sweets</label>
+          </li>
+          <li>
+            <input type="checkbox" name="variety" id="doughnuts" value="doughnuts" class="hide filter-btn">
+            <label for="doughnuts" class="btn btn-black">Doughnuts</label>
+          </li>
+        </ul>
+        <div class="filter-search flex justify-center">
+          <input type="image" src="icons/search.svg" alt="Search" class="search-btn">
+          <input type="search" class="search-field" placeholder='Search...' id="searchFilter" name="searchFilter">
+        </div>
+      </form>
+
+      <div class="store-showcase flex wrap inline-4" id="storeShowcase"></div>
+      <template id="store-card-template">
+        <!-- store card -->
+        <button class="store-item" data-variety="" data-name="" data-price="" type="button">
+          <div class="card">
+            <div class="card-container"><img src="" class="card-image" alt="store-card"></div>
+            <div class="card-body">
+              <div class="card-text flex space-between">
+                <h5 class="store-item-name">Cake</h5>
+                <h5 class="store-item-value">$ <strong id="store-item-price" class="store-item-price">0</strong></h5>
+              </div>
+            </div>
+          </div>
+        </button>
+      </template>
+
+    </section>
+  </main>
+</body>
+
+</html>
