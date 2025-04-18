@@ -31,12 +31,6 @@ const showText = function (text) {
 }
 
 const defaultURL = "./img/fallback-default.svg"
-function showDefault(elt, selector) {
-  console.log(elt, selector)
-  if (elt.tagName === "IMG" && elt.matches(selector)) {
-    elt.src = defaultURL
-  }
-}
 
 const inStore = [
   {
@@ -130,4 +124,4 @@ const inStore = [
   },
 ]
 
-export { qs, showText, defaultURL, showDefault, inStore }
+export { qs, showText, defaultURL, inStore }

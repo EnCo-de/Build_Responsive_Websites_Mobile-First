@@ -1,4 +1,4 @@
-import { qs, inStore, showDefault } from "./utils.js"
+import { qs, inStore, defaultURL } from "./utils.js"
 import { cartCounter } from "./cart.js"
 import { handleSearchFilter } from "./filter.js"
 
@@ -64,7 +64,6 @@ storeShowcase.addEventListener("click", (event) => {
 
 qs(".card-image", true).forEach((one) => {
   one.addEventListener("error", (event) => {
-    alert(event, "showDefault")
-    showDefault(event.target, ".card-image")
+    event.target.src = defaultURL
   })
 })

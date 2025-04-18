@@ -1,4 +1,4 @@
-import { defaultURL, inStore, showText, showDefault, qs } from "./utils.js"
+import { defaultURL, inStore, showText, defaultURL, qs } from "./utils.js"
 
 const cart = qs(".cart")
 
@@ -105,6 +105,9 @@ const cartCounter = () => {
       clone.querySelector(".cart-item-name").textContent = itemName
       clone.querySelector(".cart-item-price").textContent = itemPrice.toFixed(2)
       clone.querySelector(".cart-item-img").src = itemUrl
+      clone.querySelector(".cart-item-img").addEventListener("error", (event) => {
+        event.target.src = defaultURL
+      })
       clone.querySelector(".cart-item").dataset.price = itemPrice
       clone.querySelector(".cart-item-count").textContent = items[key]
       clone.querySelector("[data-key]").setAttribute("data-key", key)
@@ -114,10 +117,6 @@ const cartCounter = () => {
       showText(`${itemName} is added to your cart!`)
     }
   }
-
-  itemsContainer.addEventListener("error", (event) => {
-    showDefault(event.target, ".cart-item-img")
-  })
 
   // Save cart to local storage
   class localCart {
@@ -151,7 +150,7 @@ const cartCounter = () => {
     }
   }
 
-  window.addEventListener("pagehide", (e) => {
+  window.addEventListener("unload", (e) => {
     if (Object.keys(items).length > 0) {
       localCart.stash()
     }
