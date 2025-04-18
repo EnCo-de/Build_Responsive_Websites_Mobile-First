@@ -47,6 +47,23 @@ const inStore = [
   },
   {
     variety: "cupcakes",
+    name: "not item",
+    price: 4,
+    url: "not.jfif",
+  },
+  {
+    variety: "cupcakes",
+    name: "no url",
+    price: 4,
+  },
+  {
+    variety: "cupcakes",
+    name: "space url",
+    price: 54,
+    url: " ",
+  },
+  {
+    variety: "cupcakes",
     name: "cupcake item",
     price: 5,
     url: "img/cupcake-1.jpeg",

@@ -63,5 +63,6 @@ storeShowcase.addEventListener("click", (event) => {
 })
 
 storeShowcase.addEventListener("error", (event) => {
+  alert(event, "showDefault")
   showDefault(event.target, ".card-image")
 })
