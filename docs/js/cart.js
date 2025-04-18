@@ -140,7 +140,7 @@ const cartCounter = () => {
           itemIndex: index,
           itemName: storedItem.name,
           itemPrice: +storedItem.price,
-          itemUrl: storedItem.url.trim() || defaultURL,
+          itemUrl: storedItem.url?.trim() || defaultURL,
           number: savedCount
         }
         addToCart(chosenItem, false)
