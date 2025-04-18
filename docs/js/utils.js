@@ -31,10 +31,11 @@ const showText = function (text) {
 }
 
 const defaultURL = "./img/fallback-default.svg"
-function showDefault(elt) {
-  elt.addEventListener("error", (event) => {
-    event.target.src = defaultURL
-  })
+function showDefault(elt, selector) {
+  console.log(elt, selector)
+  if (elt.tagName === "IMG" && elt.matches(selector)) {
+    elt.src = defaultURL
+  }
 }
 
 const inStore = [

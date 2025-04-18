@@ -62,7 +62,6 @@ storeShowcase.addEventListener("click", (event) => {
   }
 })
 
-
-storeShowcase.querySelectorAll(".card-image").forEach((one) => {
-  one.addEventListener("error", showDefault)
+storeShowcase.addEventListener("error", (event) => {
+  showDefault(event.target, ".card-image")
 })

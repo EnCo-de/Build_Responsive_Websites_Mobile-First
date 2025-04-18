@@ -116,11 +116,8 @@ const cartCounter = () => {
   }
 
   itemsContainer.addEventListener("error", (event) => {
-    if (event.target.matches(".cart-item-remove")) {
-      showDefault(event.target)
-    }
+    showDefault(event.target, ".cart-item-img")
   })
-
 
   // Save cart to local storage
   class localCart {
@@ -154,7 +151,7 @@ const cartCounter = () => {
     }
   }
 
-  window.addEventListener("unload", (e) => {
+  window.addEventListener("pagehide", (e) => {
     if (Object.keys(items).length > 0) {
       localCart.stash()
     }
