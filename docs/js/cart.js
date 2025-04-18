@@ -1,4 +1,4 @@
-import { defaultURL, inStore, showText, defaultURL, qs } from "./utils.js"
+import { defaultURL, inStore, showText, qs } from "./utils.js"
 
 const cart = qs(".cart")
 
