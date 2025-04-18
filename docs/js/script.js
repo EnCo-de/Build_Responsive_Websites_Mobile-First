@@ -62,7 +62,9 @@ storeShowcase.addEventListener("click", (event) => {
   }
 })
 
-storeShowcase.addEventListener("error", (event) => {
-  alert(event, "showDefault")
-  showDefault(event.target, ".card-image")
+qs(".card-image", true).forEach((one) => {
+  one.addEventListener("error", (event) => {
+    alert(event, "showDefault")
+    showDefault(event.target, ".card-image")
+  })
 })
